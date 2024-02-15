@@ -81,4 +81,12 @@ public class PoliceOfficer : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision2D)
+    {
+        if (collision2D.collider.CompareTag("Player"))
+        {
+            GameManager.Instance.GameOver();
+        }
+    }
 }

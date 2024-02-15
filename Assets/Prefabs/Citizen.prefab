@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 92430013622024307, guid: f7d73960f6bcf184d827e1f0bdea9050, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
   Range: 1.5
   Speed: 0
-  callPoliceOfficer: {fileID: 11400000, guid: 40f1c32b2baa3b842bb54bd245d71c88, type: 2}
+  policeOfficer: {fileID: 0}

@@ -1,16 +1,12 @@
-using TMPro;
 using UnityEngine;
 
 public class Mission : MonoBehaviour
 {
-    [SerializeField] string Title;
     [SerializeField] string Description;
-    [SerializeField] CanvasGroup MissionDialog;
-    [SerializeField] TextMeshProUGUI MissionTitleUI;
-    [SerializeField] TextMeshProUGUI MissionDescriptionUI;
     [SerializeField] float Range;
     [SerializeField] PlayerStats playerStats;
     [SerializeField] Mission MissionRequired;
+    [SerializeField] MissionData missionData;
     public bool Completed = false;
     bool IsVisible = false;
     // Start is called before the first frame update
@@ -49,21 +45,19 @@ public class Mission : MonoBehaviour
         IsVisible = true;
         if (IsAvailable())
         {
-            MissionTitleUI.text = Title;
-            MissionDescriptionUI.text = Description;
+            missionData.Set(name, Description);
         }
         else
         {
-            MissionTitleUI.text = "Missão bloqueada";
-            MissionDescriptionUI.text = MissionRequired.Title + " deve ser completada antes.";
+            missionData.Set("Missão bloqueada", MissionRequired.name + " deve ser completada antes.");
         }
-        MissionDialog.alpha = 1;
+        missionData.Open();
     }
 
     void HideDialog()
     {
         IsVisible = false;
-        MissionDialog.alpha = 0;
+        missionData.Close();
     }
 
     bool IsAvailable() => !Completed && (playerStats.missionsCompleted.Contains(MissionRequired) || MissionRequired == null);

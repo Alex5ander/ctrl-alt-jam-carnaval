@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc92c2a7bcb977e4987a2335a33739eb, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  position: {x: 16.222254, y: 1.6982778, z: 0}
-  hidden: 1
+  position: {x: 0.5, y: 0.5, z: 0}
+  hidden: 0
   mission: {fileID: 0}
   missionsCompleted: []
+  TimeLeft: 60
+  MaxTimeLeft: 60

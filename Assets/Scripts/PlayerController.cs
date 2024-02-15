@@ -6,25 +6,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     float horizontal = 0;
     float vertical = 0;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         playerStats.Reset();
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
+        horizontal = Input.GetAxisRaw("Horizontal") * Time.timeScale;
+        vertical = Input.GetAxisRaw("Vertical") * Time.timeScale;
 
-        // animator.SetFloat("MoveX", horizontal);
-        // animator.SetFloat("MoveY", vertical);
+        animator.SetFloat("MoveX", horizontal);
+        animator.SetFloat("MoveY", vertical);
 
         if (horizontal != 0 || vertical != 0)
         {
-            // animator.SetFloat("LastMoveX", horizontal);
-            // animator.SetFloat("LastMoveY", vertical);
+            animator.SetFloat("LastMoveX", horizontal);
+            animator.SetFloat("LastMoveY", vertical);
         }
     }
 

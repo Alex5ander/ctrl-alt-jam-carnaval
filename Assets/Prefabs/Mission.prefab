@@ -146,8 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: 
   Description: 
-  MissionDialog: {fileID: 0}
-  MissionTitleUI: {fileID: 0}
-  MissionDescriptionUI: {fileID: 0}
   Range: 1
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
+  MissionRequired: {fileID: 0}
+  missionData: {fileID: 11400000, guid: c9ca1e6d4a4e98e47a1d0709edc90fce, type: 2}
+  Completed: 0

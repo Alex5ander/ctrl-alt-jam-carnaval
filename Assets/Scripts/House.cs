@@ -27,11 +27,11 @@ public class House : MonoBehaviour
                 policeOfficer.Call();
                 spriteRenderer.color = Color.red;
                 amountPinted += 1;
+                painted = true;
                 if (amountPinted == maxPinted)
                 {
                     playerStats.mission.CompleteMission();
                 }
-                painted = true;
             }
         }
     }

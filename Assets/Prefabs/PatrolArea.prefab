@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 2
-  Speed: 9
+  Speed: 8
   patrolArea: {fileID: 2795252182531031521}
   pointA: {fileID: 8738021962110427735}
   pointB: {fileID: 7857297096669874232}

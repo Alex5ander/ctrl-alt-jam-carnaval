@@ -1,14 +1,15 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] float MaxTimeInSeconds;
     [Header("UI Objects")]
     [SerializeField] TextMeshProUGUI TimerUI;
+    [SerializeField] CanvasGroup GameOverDialog;
     public static GameManager Instance { get; private set; }
-    public float TimeLeft { get; private set; }
+    [SerializeField] PlayerStats playerStats;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
             Destroy(Instance);
         }
         Instance = this;
-        TimeLeft = MaxTimeInSeconds;
+        GameOverDialog.alpha = 0;
     }
 
     // Update is called once per frame
@@ -28,17 +29,21 @@ public class GameManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (TimeLeft > 0)
+        if (playerStats.TimeLeft > 0)
         {
-            TimeLeft -= Time.fixedDeltaTime;
-            if (TimeLeft < 0)
-            {
-                TimeLeft = 0;
-            }
-            TimerUI.text = Mathf.FloorToInt(TimeLeft).ToString();
+            playerStats.TimeLeft -= Time.fixedDeltaTime;
         }
+        if (playerStats.TimeLeft < 0)
+        {
+            playerStats.TimeLeft = 0;
+            GameOver();
+        }
+        TimerUI.text = TimeSpan.FromSeconds(playerStats.TimeLeft).ToString(@"m\:ss");
     }
-
-    static public void LoadGameScene() => SceneManager.LoadScene(1);
-    static public void Exit() => Application.Quit();
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        GameOverDialog.alpha = 1;
+    }
+    static public void LoadMainScene() => SceneManager.LoadScene(0);
 }
