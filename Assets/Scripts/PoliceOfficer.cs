@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class PoliceOfficer : MonoBehaviour
 {
-    [SerializeField] Transform player;
     [SerializeField] float Range;
     [SerializeField] float Speed;
     [SerializeField] Transform patrolArea;
     [SerializeField] Transform pointA;
     [SerializeField] Transform pointB;
+    [SerializeField] PlayerStats playerStats;
     Vector3 target;
     public bool IsPatrol = false;
+    bool IgnoreRange = false;
     [SerializeField] AStar aStar;
     Node next;
     // Start is called before the first frame update
@@ -30,11 +31,11 @@ public class PoliceOfficer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float targetDistance = Vector2.Distance(player.position, transform.position);
-        if (targetDistance < Range)
+        float targetDistance = Vector2.Distance(playerStats.position, transform.position);
+        if ((targetDistance < Range || IgnoreRange) && !playerStats.hidden)
         {
             IsPatrol = false;
-            target = player.position;
+            target = playerStats.position;
         }
         else if (transform.position != patrolArea.position && IsPatrol == false)
         {
@@ -43,6 +44,7 @@ public class PoliceOfficer : MonoBehaviour
         else if (transform.position == patrolArea.position)
         {
             IsPatrol = true;
+            IgnoreRange = false;
         }
 
         if (IsPatrol)
@@ -52,12 +54,12 @@ public class PoliceOfficer : MonoBehaviour
                 target = target == pointA.position ? pointB.position : pointA.position;
             }
         }
+
         transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.fixedDeltaTime);
     }
     public void Call()
     {
-        // IsPatrol = false;
-        // target = player.position;
+        IgnoreRange = true;
     }
     public void FollowPath()
     {

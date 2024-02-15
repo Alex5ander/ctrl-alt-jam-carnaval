@@ -1,12 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Citizen : MonoBehaviour
+public class HidingPlace : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;
-    [SerializeField] float Speed;
-    [SerializeField] PoliceOfficer policeOfficer;
+    bool active = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,15 +14,20 @@ public class Citizen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float targetDistance = Vector2.Distance(playerStats.position, transform.position);
-        if (targetDistance < Range)
+        if (Vector3.Distance(transform.position, playerStats.position) < Range)
         {
-            policeOfficer.Call();
+            active = true;
+            playerStats.hidden = true;
+        }
+        else if (active == true)
+        {
+            active = false;
+            playerStats.hidden = false;
         }
     }
+
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
 }

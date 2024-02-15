@@ -3,12 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float Speed;
+    [SerializeField] PlayerStats playerStats;
     float horizontal = 0;
     float vertical = 0;
     // Start is called before the first frame update
     void Start()
     {
-
+        playerStats.Reset();
     }
 
     // Update is called once per frame
@@ -25,20 +26,11 @@ public class PlayerController : MonoBehaviour
             // animator.SetFloat("LastMoveX", horizontal);
             // animator.SetFloat("LastMoveY", vertical);
         }
-
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            Interact();
-        }
     }
 
     void FixedUpdate()
     {
         transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(horizontal, vertical).normalized, Time.fixedDeltaTime * Speed);
-    }
-
-    void Interact()
-    {
-
+        playerStats.position = transform.position;
     }
 }
