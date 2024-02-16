@@ -12,22 +12,16 @@ public class PoliceOfficer : MonoBehaviour
     Vector3 target;
     public bool IsPatrol = false;
     bool IgnoreRange = false;
-    [SerializeField] AStar aStar;
-    Node next;
     // Start is called before the first frame update
     void Start()
     {
         target = pointA.position;
-        // transform.position = new(5, 5);
-        // aStar.LoadNodes();
-        // aStar.FindPath(aStar.nodes[5, 5], aStar.nodes[0, 5]);
-        // next = aStar.path[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        // FollowPath();
+
     }
     void FixedUpdate()
     {
@@ -60,21 +54,6 @@ public class PoliceOfficer : MonoBehaviour
     public void Call()
     {
         IgnoreRange = true;
-    }
-    public void FollowPath()
-    {
-        if (transform.position != new Vector3(next.x, next.y, transform.position.z))
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new(next.x, next.y, transform.position.z), Time.deltaTime);
-        }
-        else
-        {
-            aStar.path.Remove(next);
-            if (aStar.path.Count > 0)
-            {
-                next = aStar.path[0];
-            }
-        }
     }
     private void OnDrawGizmos()
     {

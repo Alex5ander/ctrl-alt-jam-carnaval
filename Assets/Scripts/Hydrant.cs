@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class House : MonoBehaviour
+public class Hydrant : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;

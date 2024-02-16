@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
     float horizontal = 0;
     float vertical = 0;
     Animator animator;
+    Rigidbody2D rigidBody2D;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        rigidBody2D = GetComponent<Rigidbody2D>();
         playerStats.Reset();
     }
 
@@ -32,7 +34,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + new Vector3(horizontal, vertical).normalized, Time.fixedDeltaTime * Speed);
+        Vector2 newPos = transform.position + Speed * Time.fixedDeltaTime * new Vector3(horizontal, vertical).normalized;
+        rigidBody2D.MovePosition(newPos);
         playerStats.position = transform.position;
     }
 }

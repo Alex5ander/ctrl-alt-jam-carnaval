@@ -100,13 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 2
-  Speed: 8
+  Speed: 6
   patrolArea: {fileID: 2795252182531031521}
   pointA: {fileID: 8738021962110427735}
   pointB: {fileID: 7857297096669874232}
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
   IsPatrol: 0
-  aStar: {fileID: 0}
 --- !u!61 &43642461141302177
 BoxCollider2D:
   m_ObjectHideFlags: 0

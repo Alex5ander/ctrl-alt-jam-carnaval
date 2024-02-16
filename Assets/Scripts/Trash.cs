@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class House : MonoBehaviour
+public class Trash : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;
@@ -37,7 +37,7 @@ public class House : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
 }

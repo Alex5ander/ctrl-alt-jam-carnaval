@@ -1,11 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class House : MonoBehaviour
+public class Alarm : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;
     [SerializeField] Mission mission;
-    [SerializeField] PoliceOfficer policeOfficer;
+    [SerializeField] List<PoliceOfficer> policeOfficers;
     SpriteRenderer spriteRenderer;
     bool painted = false;
     static int score = 0;
@@ -20,11 +21,18 @@ public class House : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerStats.mission != null && playerStats.mission.Completed == false && playerStats.mission == mission)
+        bool InRange = Vector3.Distance(transform.position, playerStats.position) < Range;
+        if (InRange)
         {
-            if (Vector3.Distance(transform.position, playerStats.position) < Range && Input.GetKeyUp(KeyCode.Space) && painted == false)
+            foreach (PoliceOfficer policeOfficer in policeOfficers)
             {
                 policeOfficer.Call();
+            }
+        }
+        if (playerStats.mission != null && playerStats.mission.Completed == false && playerStats.mission == mission)
+        {
+            if (InRange && Input.GetKeyUp(KeyCode.Space) && painted == false)
+            {
                 spriteRenderer.color = Color.green;
                 score += 1;
                 painted = true;

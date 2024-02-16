@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,8 +9,24 @@ public class GameManager : MonoBehaviour
     [Header("UI Objects")]
     [SerializeField] TextMeshProUGUI TimerUI;
     [SerializeField] CanvasGroup GameOverDialog;
+    [SerializeField] TextMeshProUGUI GameOverMessage;
+    [SerializeField] CanvasGroup PauseDialog;
     public static GameManager Instance { get; private set; }
+    bool IsGameOver = false;
     [SerializeField] PlayerStats playerStats;
+    List<string> GameWinMessages = new(){
+        "Missão cumprida! Você deixou sua marca e Greenville nunca mais será a mesma.",
+        "Vitória! Você é o rei da travessura, e Greenville é seu reino de diversão e caos!",
+        "Você conseguiu! Que maneira perfeita de encerrar o dia, Greenville está em caos.",
+        "Você venceu! E mostrou que é o verdadeiro rei das travessuras, deixando Greenville de cabeça para baixo."
+    };
+    List<string> GameLostMessages = new()
+    {
+        "Ops! Você foi pego pelas autoridades. Melhor sorte na próxima vez!",
+        "Game over! Você não conseguiu evitar a captura e agora está em apuros.",
+        "Você falhou em sua missão de causar caos e Greenville ainda permanece intacta.",
+        "Oops! Parece que o sol se pôs sobre suas travessuras. Mas não se preocupe, amanhã é outro dia e você poderá causar o caos em Greenville!"
+    };
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +35,15 @@ public class GameManager : MonoBehaviour
             Destroy(Instance);
         }
         Instance = this;
-        GameOverDialog.alpha = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyUp(KeyCode.P) && !IsGameOver)
+        {
+            Pause();
+        }
     }
 
     void FixedUpdate()
@@ -40,10 +59,30 @@ public class GameManager : MonoBehaviour
         }
         TimerUI.text = TimeSpan.FromSeconds(playerStats.TimeLeft).ToString(@"m\:ss");
     }
+    void Pause()
+    {
+        PauseDialog.alpha = PauseDialog.alpha == 1 ? 0 : 1;
+        PauseDialog.blocksRaycasts = !PauseDialog.blocksRaycasts;
+        PauseDialog.interactable = !PauseDialog.interactable;
+        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
+    }
     public void GameOver()
     {
+        IsGameOver = true;
         Time.timeScale = 0;
         GameOverDialog.alpha = 1;
+        GameOverDialog.blocksRaycasts = true;
+        GameOverDialog.interactable = true;
+        string message;
+        if (playerStats.missionsCompleted.Count == 5)
+        {
+            message = GameWinMessages[UnityEngine.Random.Range(0, GameWinMessages.Count)];
+        }
+        else
+        {
+            message = GameLostMessages[UnityEngine.Random.Range(0, GameLostMessages.Count)];
+        }
+        GameOverMessage.text = message;
     }
     static public void LoadMainScene() => SceneManager.LoadScene(0);
 }

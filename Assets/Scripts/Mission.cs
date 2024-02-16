@@ -7,12 +7,13 @@ public class Mission : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     [SerializeField] Mission MissionRequired;
     [SerializeField] MissionData missionData;
+    [SerializeField] SpriteRenderer spriteRenderer;
     public bool Completed = false;
     bool IsVisible = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -35,9 +36,12 @@ public class Mission : MonoBehaviour
 
     public void CompleteMission()
     {
-        Debug.Log("Mission Completed");
+        Debug.Log("Completed");
+        spriteRenderer.color = Color.green;
+        Completed = true;
         playerStats.missionsCompleted.Add(playerStats.mission);
         playerStats.mission = null;
+        playerStats.TimeLeft = playerStats.MaxTimeLeft;
     }
 
     void ShowDialog()
