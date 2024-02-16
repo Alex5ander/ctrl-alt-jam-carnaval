@@ -6,7 +6,7 @@ public class Citizen : MonoBehaviour
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;
     [SerializeField] float Speed;
-    [SerializeField] PoliceOfficer policeOfficer;
+    [SerializeField] List<PoliceOfficer> policeOfficers;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,19 @@ public class Citizen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float targetDistance = Vector2.Distance(playerStats.position, transform.position);
-        if (targetDistance < Range)
+        if (Vector2.Distance(playerStats.position, transform.position) < Range)
         {
-            policeOfficer.Call();
+            PoliceOfficer nearPoliceOfficer = policeOfficers[0];
+            foreach (PoliceOfficer policeOfficer in policeOfficers)
+            {
+                float d1 = Vector2.Distance(transform.position, nearPoliceOfficer.transform.position);
+                float d2 = Vector2.Distance(transform.position, policeOfficer.transform.position);
+                if (d2 < d1)
+                {
+                    nearPoliceOfficer = policeOfficer;
+                }
+            }
+            nearPoliceOfficer.Call();
         }
     }
     private void OnDrawGizmos()

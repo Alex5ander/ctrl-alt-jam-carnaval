@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5155170266243621842}
   - component: {fileID: 5292672436956733162}
-  - component: {fileID: 3789023482826174587}
   - component: {fileID: 43642461141302177}
   - component: {fileID: 5300520023661405895}
+  - component: {fileID: 3490781885850692781}
   m_Layer: 0
   m_Name: Police Officer
   m_TagString: Untagged
@@ -87,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3789023482826174587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458936684749981505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54395781b3e59334e888bc7ba64d20f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Range: 2
-  Speed: 6
-  patrolArea: {fileID: 2795252182531031521}
-  pointA: {fileID: 8738021962110427735}
-  pointB: {fileID: 7857297096669874232}
-  playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
-  IsPatrol: 0
 --- !u!61 &43642461141302177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -179,6 +160,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &3490781885850692781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458936684749981505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54395781b3e59334e888bc7ba64d20f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 2
+  Speed: 6
+  pointA: {fileID: 8738021962110427735}
+  pointB: {fileID: 7857297096669874232}
+  patrolArea: {fileID: 2795252182531031521}
+  playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
+  IsPatrol: 0
 --- !u!1 &1114450342384809300
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2795252182531031521}
   m_Layer: 0
-  m_Name: PatrolArea
+  m_Name: PoliceOfficer
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

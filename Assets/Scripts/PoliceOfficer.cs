@@ -5,9 +5,9 @@ public class PoliceOfficer : MonoBehaviour
 {
     [SerializeField] float Range;
     [SerializeField] float Speed;
-    [SerializeField] Transform patrolArea;
     [SerializeField] Transform pointA;
     [SerializeField] Transform pointB;
+    [SerializeField] public Transform patrolArea;
     [SerializeField] PlayerStats playerStats;
     Vector3 target;
     public bool IsPatrol = false;

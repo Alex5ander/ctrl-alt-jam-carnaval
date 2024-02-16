@@ -1,51 +1,41 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Alarm : MonoBehaviour
+public class MissionCondition : MonoBehaviour
 {
     [SerializeField] PlayerStats playerStats;
     [SerializeField] float Range;
+    [SerializeField] Color RangeColor;
     [SerializeField] Mission mission;
-    [SerializeField] List<PoliceOfficer> policeOfficers;
+    [SerializeField] PoliceOfficer policeOfficer;
     SpriteRenderer spriteRenderer;
     bool painted = false;
-    static int score = 0;
-    static int maxScore = 0;
     // Start is called before the first frame update
     void Start()
     {
-        maxScore += 1;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool InRange = Vector3.Distance(transform.position, playerStats.position) < Range;
-        if (InRange)
-        {
-            foreach (PoliceOfficer policeOfficer in policeOfficers)
-            {
-                policeOfficer.Call();
-            }
-        }
         if (playerStats.mission != null && playerStats.mission.Completed == false && playerStats.mission == mission)
         {
-            if (InRange && Input.GetKeyUp(KeyCode.Space) && painted == false)
+            if (Vector3.Distance(transform.position, playerStats.position) < Range && Input.GetKeyUp(KeyCode.Space) && painted == false)
             {
+                // policeOfficer.Call();
                 spriteRenderer.color = Color.green;
-                score += 1;
+                mission.score += 1;
                 painted = true;
-                if (score == maxScore)
+                if (mission.score == mission.maxScore)
                 {
-                    playerStats.mission.CompleteMission();
+                    mission.CompleteMission();
                 }
             }
         }
     }
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
+        Gizmos.color = RangeColor;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
 }
