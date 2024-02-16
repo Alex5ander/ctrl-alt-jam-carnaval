@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class PoliceOfficer : MonoBehaviour
@@ -9,12 +8,16 @@ public class PoliceOfficer : MonoBehaviour
     [SerializeField] Transform pointB;
     [SerializeField] public Transform patrolArea;
     [SerializeField] PlayerStats playerStats;
+    [SerializeField] PoliceOfficers policeOfficers;
+    Animator animator;
     Vector3 target;
     public bool IsPatrol = false;
     bool IgnoreRange = false;
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        policeOfficers.list.Add(this);
         target = pointA.position;
     }
 
@@ -49,7 +52,10 @@ public class PoliceOfficer : MonoBehaviour
             }
         }
 
+        Vector2 direction = (target - transform.position).normalized;
         transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.fixedDeltaTime);
+        animator.SetFloat("MoveX", direction.x);
+        animator.SetFloat("MoveY", direction.y);
     }
     public void Call()
     {
@@ -63,7 +69,7 @@ public class PoliceOfficer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.collider.CompareTag("Player"))
+        if (collision2D.collider.CompareTag("Player") && playerStats.hidden == false)
         {
             GameManager.Instance.GameOver();
         }

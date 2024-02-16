@@ -6,8 +6,8 @@ public class MissionCondition : MonoBehaviour
     [SerializeField] float Range;
     [SerializeField] Color RangeColor;
     [SerializeField] Mission mission;
-    [SerializeField] PoliceOfficer policeOfficer;
     SpriteRenderer spriteRenderer;
+    [SerializeField] PoliceOfficers policeOfficers;
     bool painted = false;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class MissionCondition : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, playerStats.position) < Range && Input.GetKeyUp(KeyCode.Space) && painted == false)
             {
-                // policeOfficer.Call();
+                policeOfficers.Call(transform.position);
                 spriteRenderer.color = Color.green;
                 mission.score += 1;
                 painted = true;
@@ -33,6 +33,8 @@ public class MissionCondition : MonoBehaviour
             }
         }
     }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = RangeColor;

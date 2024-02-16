@@ -147,4 +147,4 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
   Range: 1.5
   Speed: 0
-  policeOfficer: {fileID: 0}
+  policeOfficers: {fileID: 11400000, guid: 74f76321859c0e346a4aada739fe4821, type: 2}

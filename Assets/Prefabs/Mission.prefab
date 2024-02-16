@@ -121,8 +121,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 1730225382, guid: 06d540d5ed48db542a8edc81b0afc0b5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,10 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc9cdee715b1de469e0a281ed13e202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: 
   Description: 
   Range: 1
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
   MissionRequired: {fileID: 0}
   missionData: {fileID: 11400000, guid: c9ca1e6d4a4e98e47a1d0709edc90fce, type: 2}
+  maxScore: 0
+  score: 0
   Completed: 0

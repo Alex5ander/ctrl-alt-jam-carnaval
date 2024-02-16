@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [Header("UI Objects")]
     [SerializeField] TextMeshProUGUI TimerUI;
+    [SerializeField] Color GameOverDialogColor;
+    [SerializeField] Color GameWinDialogColor;
     [SerializeField] CanvasGroup GameOverDialog;
+    [SerializeField] Image GameOverDialogImage;
     [SerializeField] TextMeshProUGUI GameOverMessage;
     [SerializeField] CanvasGroup PauseDialog;
     public static GameManager Instance { get; private set; }
     bool IsGameOver = false;
     [SerializeField] PlayerStats playerStats;
+    [SerializeField] PoliceOfficers policeOfficers;
     List<string> GameWinMessages = new(){
         "Missão cumprida! Você deixou sua marca e Greenville nunca mais será a mesma.",
         "Vitória! Você é o rei da travessura, e Greenville é seu reino de diversão e caos!",
@@ -27,14 +32,18 @@ public class GameManager : MonoBehaviour
         "Você falhou em sua missão de causar caos e Greenville ainda permanece intacta.",
         "Oops! Parece que o sol se pôs sobre suas travessuras. Mas não se preocupe, amanhã é outro dia e você poderá causar o caos em Greenville!"
     };
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (Instance != null)
         {
             Destroy(Instance);
         }
         Instance = this;
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        policeOfficers.list.Clear();
     }
 
     // Update is called once per frame
@@ -73,16 +82,16 @@ public class GameManager : MonoBehaviour
         GameOverDialog.alpha = 1;
         GameOverDialog.blocksRaycasts = true;
         GameOverDialog.interactable = true;
-        string message;
+        string message = GameLostMessages[UnityEngine.Random.Range(0, GameLostMessages.Count)];
+        Color color = GameOverDialogColor;
         if (playerStats.missionsCompleted.Count == 5)
         {
             message = GameWinMessages[UnityEngine.Random.Range(0, GameWinMessages.Count)];
-        }
-        else
-        {
-            message = GameLostMessages[UnityEngine.Random.Range(0, GameLostMessages.Count)];
+            color = GameWinDialogColor;
         }
         GameOverMessage.text = message;
+        GameOverDialogImage.color = color;
+        policeOfficers.list.Clear();
     }
     static public void LoadMainScene() => SceneManager.LoadScene(0);
 }
