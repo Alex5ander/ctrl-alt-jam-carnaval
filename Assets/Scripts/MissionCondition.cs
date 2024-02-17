@@ -23,7 +23,20 @@ public class MissionCondition : MonoBehaviour
             if (Vector3.Distance(transform.position, playerStats.position) < Range && Input.GetKeyUp(KeyCode.Space) && painted == false)
             {
                 policeOfficers.Call(transform.position);
-                spriteRenderer.color = Color.green;
+
+                if (mission.name == "Missão 1")
+                {
+                    spriteRenderer.color = Color.green;
+                }
+                if (mission.name == "Missão 2" || mission.name == "Missão 4")
+                {
+                    transform.rotation = Quaternion.AngleAxis(Random.Range(30f, 90f), Vector3.forward);
+                }
+                if (mission.name == "Missão 3")
+                {
+                    GameManager.Instance.StartParticles();
+                }
+
                 mission.score += 1;
                 painted = true;
                 if (mission.score == mission.maxScore)
@@ -33,7 +46,6 @@ public class MissionCondition : MonoBehaviour
             }
         }
     }
-
 
     private void OnDrawGizmos()
     {

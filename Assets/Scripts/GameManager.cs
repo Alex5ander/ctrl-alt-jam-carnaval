@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     bool IsGameOver = false;
     [SerializeField] PlayerStats playerStats;
     [SerializeField] PoliceOfficers policeOfficers;
+    [SerializeField] ParticleSystem particles;
     List<string> GameWinMessages = new(){
         "Missão cumprida! Você deixou sua marca e Greenville nunca mais será a mesma.",
         "Vitória! Você é o rei da travessura, e Greenville é seu reino de diversão e caos!",
@@ -92,6 +93,10 @@ public class GameManager : MonoBehaviour
         GameOverMessage.text = message;
         GameOverDialogImage.color = color;
         policeOfficers.list.Clear();
+    }
+    public void StartParticles()
+    {
+        particles.Play();
     }
     static public void LoadMainScene() => SceneManager.LoadScene(0);
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Mission : MonoBehaviour
 {
@@ -9,13 +10,13 @@ public class Mission : MonoBehaviour
     [SerializeField] MissionData missionData;
     [SerializeField] public int maxScore;
     [SerializeField] public int score;
-    SpriteRenderer spriteRenderer;
+    [SerializeField] Image MissionUI;
     public bool Completed = false;
     bool IsVisible = false;
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -38,11 +39,12 @@ public class Mission : MonoBehaviour
 
     public void CompleteMission()
     {
-        spriteRenderer.color = Color.green;
         Completed = true;
         playerStats.missionsCompleted.Add(playerStats.mission);
         playerStats.mission = null;
         playerStats.TimeLeft = playerStats.MaxTimeLeft;
+        MissionUI.color = Color.green;
+        missionData.Complete();
         if (playerStats.missionsCompleted.Count == 5)
         {
             GameManager.Instance.GameOver();
@@ -56,7 +58,11 @@ public class Mission : MonoBehaviour
         {
             missionData.Set(name, Description);
         }
-        else
+        else if (Completed)
+        {
+            missionData.Set(name, "Missão completada");
+        }
+        else if (MissionRequired != null)
         {
             missionData.Set("Missão bloqueada", MissionRequired.name + " deve ser completada antes.");
         }

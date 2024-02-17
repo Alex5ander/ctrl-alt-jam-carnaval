@@ -64,11 +64,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -78,7 +78,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &1092463650014497215
 SpriteRenderer:
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1730225382, guid: 06d540d5ed48db542a8edc81b0afc0b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -145,10 +145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Description: 
-  Range: 1
+  Range: 1.5
   playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
   MissionRequired: {fileID: 0}
   missionData: {fileID: 11400000, guid: c9ca1e6d4a4e98e47a1d0709edc90fce, type: 2}
   maxScore: 0
   score: 0
+  MissionUI: {fileID: 0}
   Completed: 0

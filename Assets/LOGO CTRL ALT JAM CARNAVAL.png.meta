@@ -1,0 +1,1086 @@
+fileFormatVersion: 2
+guid: dfdb5f87e0d8b8c478c4fae25dffc4a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1196466633205052096
+    second: LOGO CTRL ALT JAM CARNAVAL_0
+  - first:
+      213: 6341066555986654050
+    second: LOGO CTRL ALT JAM CARNAVAL_1
+  - first:
+      213: -8812364894867014541
+    second: LOGO CTRL ALT JAM CARNAVAL_2
+  - first:
+      213: 3401634027831514910
+    second: LOGO CTRL ALT JAM CARNAVAL_3
+  - first:
+      213: -1560730163817145093
+    second: LOGO CTRL ALT JAM CARNAVAL_4
+  - first:
+      213: 5082641936069429364
+    second: LOGO CTRL ALT JAM CARNAVAL_5
+  - first:
+      213: -405231615096958668
+    second: LOGO CTRL ALT JAM CARNAVAL_6
+  - first:
+      213: 768480507960870756
+    second: LOGO CTRL ALT JAM CARNAVAL_7
+  - first:
+      213: 7764678827948721596
+    second: LOGO CTRL ALT JAM CARNAVAL_8
+  - first:
+      213: 478856664651950590
+    second: LOGO CTRL ALT JAM CARNAVAL_9
+  - first:
+      213: -8628318637354383719
+    second: LOGO CTRL ALT JAM CARNAVAL_10
+  - first:
+      213: -4483011031053958141
+    second: LOGO CTRL ALT JAM CARNAVAL_11
+  - first:
+      213: -7614316679453381240
+    second: LOGO CTRL ALT JAM CARNAVAL_12
+  - first:
+      213: 7163023470979078716
+    second: LOGO CTRL ALT JAM CARNAVAL_13
+  - first:
+      213: -4993514896974872584
+    second: LOGO CTRL ALT JAM CARNAVAL_14
+  - first:
+      213: -8013714175545210521
+    second: LOGO CTRL ALT JAM CARNAVAL_15
+  - first:
+      213: -3473007023370263198
+    second: LOGO CTRL ALT JAM CARNAVAL_16
+  - first:
+      213: -2138456158971846900
+    second: LOGO CTRL ALT JAM CARNAVAL_17
+  - first:
+      213: -6026708369069715885
+    second: LOGO CTRL ALT JAM CARNAVAL_18
+  - first:
+      213: -2593300608197760709
+    second: LOGO CTRL ALT JAM CARNAVAL_19
+  - first:
+      213: 3618642047710406378
+    second: LOGO CTRL ALT JAM CARNAVAL_20
+  - first:
+      213: -7446858228327106330
+    second: LOGO CTRL ALT JAM CARNAVAL_21
+  - first:
+      213: 6315595377843501074
+    second: LOGO CTRL ALT JAM CARNAVAL_22
+  - first:
+      213: 9002662148021968747
+    second: LOGO CTRL ALT JAM CARNAVAL_23
+  - first:
+      213: -2323267204914015856
+    second: LOGO CTRL ALT JAM CARNAVAL_24
+  - first:
+      213: 1388534612763055750
+    second: LOGO CTRL ALT JAM CARNAVAL_25
+  - first:
+      213: 8542896558742777545
+    second: LOGO CTRL ALT JAM CARNAVAL_26
+  - first:
+      213: 6660136191071591232
+    second: LOGO CTRL ALT JAM CARNAVAL_27
+  - first:
+      213: 3033723105315474957
+    second: LOGO CTRL ALT JAM CARNAVAL_28
+  - first:
+      213: -8625608722049128914
+    second: LOGO CTRL ALT JAM CARNAVAL_29
+  - first:
+      213: 4543839431997297088
+    second: LOGO CTRL ALT JAM CARNAVAL_30
+  - first:
+      213: -8150192592075573774
+    second: LOGO CTRL ALT JAM CARNAVAL_31
+  - first:
+      213: -3221996754510613088
+    second: LOGO CTRL ALT JAM CARNAVAL_32
+  - first:
+      213: -1604411825089213363
+    second: LOGO CTRL ALT JAM CARNAVAL_33
+  - first:
+      213: 678531195766019176
+    second: LOGO CTRL ALT JAM CARNAVAL_34
+  - first:
+      213: 4352467502279612170
+    second: LOGO CTRL ALT JAM CARNAVAL_35
+  - first:
+      213: -5315363618490507638
+    second: LOGO CTRL ALT JAM CARNAVAL_36
+  - first:
+      213: 6856496440896258573
+    second: LOGO CTRL ALT JAM CARNAVAL_37
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_0
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 809
+        width: 50
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c27bc15014ba9010800000000000000
+      internalID: 1196466633205052096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_1
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 825
+        width: 396
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263b1beaf6efff750800000000000000
+      internalID: 6341066555986654050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_2
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 763
+        width: 28
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c345a61d034b580800000000000000
+      internalID: -8812364894867014541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_3
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 751
+        width: 162
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1757cc2028053f20800000000000000
+      internalID: 3401634027831514910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_4
+      rect:
+        serializedVersion: 2
+        x: 1033
+        y: 763
+        width: 27
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc11736f2c275ae0800000000000000
+      internalID: -1560730163817145093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_5
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 809
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4780cef69eb298640800000000000000
+      internalID: 5082641936069429364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_6
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 657
+        width: 176
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431536a3ef3506af0800000000000000
+      internalID: -405231615096958668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_7
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 727
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467c1dd43f03aaa00800000000000000
+      internalID: 768480507960870756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_8
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 733
+        width: 46
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb541e6414ea1cb60800000000000000
+      internalID: 7764678827948721596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_9
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 732
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef968e2799d35a600800000000000000
+      internalID: 478856664651950590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_10
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 755
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9960c930aed024880800000000000000
+      internalID: -8628318637354383719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_11
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 755
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3040fd1283529c1c0800000000000000
+      internalID: -4483011031053958141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_12
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 732
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d69d98253845690800000000000000
+      internalID: -7614316679453381240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_13
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 733
+        width: 46
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a5e7145eb286360800000000000000
+      internalID: 7163023470979078716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_14
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 727
+        width: 30
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fff03178a873bab0800000000000000
+      internalID: -4993514896974872584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_15
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 657
+        width: 176
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7698d137a6199c090800000000000000
+      internalID: -8013714175545210521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_16
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 595
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265249553866dcfc0800000000000000
+      internalID: -3473007023370263198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_17
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 605
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f9cb4147da252e0800000000000000
+      internalID: -2138456158971846900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_18
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 503
+        width: 143
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ec9b05ba4dc5ca0800000000000000
+      internalID: -6026708369069715885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_19
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 501
+        width: 130
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b39619436deb20cd0800000000000000
+      internalID: -2593300608197760709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_20
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 518
+        width: 135
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae6221f15cff73230800000000000000
+      internalID: 3618642047710406378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_21
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 500
+        width: 75
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e83edf75e177a890800000000000000
+      internalID: -7446858228327106330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_22
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 605
+        width: 48
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 218f571e88085a750800000000000000
+      internalID: 6315595377843501074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_23
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 595
+        width: 36
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f54b58681efec70800000000000000
+      internalID: 9002662148021968747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_24
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 303
+        width: 267
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09119cc49c812cfd0800000000000000
+      internalID: -2323267204914015856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_25
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 304
+        width: 59
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6869310afd0154310800000000000000
+      internalID: 1388534612763055750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_26
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 305
+        width: 102
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce25c078277e8670800000000000000
+      internalID: 8542896558742777545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_27
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 311
+        width: 409
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b9b80349e8d6c50800000000000000
+      internalID: 6660136191071591232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_28
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 226
+        width: 122
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e49374713f91a20800000000000000
+      internalID: 3033723105315474957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_29
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 227
+        width: 91
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2620c6519eab4880800000000000000
+      internalID: -8625608722049128914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_30
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 227
+        width: 47
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c19c9c93e5fe0f30800000000000000
+      internalID: 4543839431997297088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 227
+        width: 79
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5b052e403b4ee80800000000000000
+      internalID: -8150192592075573774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_32
+      rect:
+        serializedVersion: 2
+        x: 985
+        y: 226
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5feebc50b2943d0800000000000000
+      internalID: -3221996754510613088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_33
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 228
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c0f1412fbfbb9e0800000000000000
+      internalID: -1604411825089213363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_34
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 227
+        width: 21
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86497ac0780aa6900800000000000000
+      internalID: 678531195766019176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_35
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 227
+        width: 59
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07dec90222176c30800000000000000
+      internalID: 4352467502279612170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_36
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 230
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e96d373f80c36b0800000000000000
+      internalID: -5315363618490507638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LOGO CTRL ALT JAM CARNAVAL_37
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 228
+        width: 45
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d020a5b8f2b272f50800000000000000
+      internalID: 6856496440896258573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LOGO CTRL ALT JAM CARNAVAL_0: 1196466633205052096
+      LOGO CTRL ALT JAM CARNAVAL_1: 6341066555986654050
+      LOGO CTRL ALT JAM CARNAVAL_10: -8628318637354383719
+      LOGO CTRL ALT JAM CARNAVAL_11: -4483011031053958141
+      LOGO CTRL ALT JAM CARNAVAL_12: -7614316679453381240
+      LOGO CTRL ALT JAM CARNAVAL_13: 7163023470979078716
+      LOGO CTRL ALT JAM CARNAVAL_14: -4993514896974872584
+      LOGO CTRL ALT JAM CARNAVAL_15: -8013714175545210521
+      LOGO CTRL ALT JAM CARNAVAL_16: -3473007023370263198
+      LOGO CTRL ALT JAM CARNAVAL_17: -2138456158971846900
+      LOGO CTRL ALT JAM CARNAVAL_18: -6026708369069715885
+      LOGO CTRL ALT JAM CARNAVAL_19: -2593300608197760709
+      LOGO CTRL ALT JAM CARNAVAL_2: -8812364894867014541
+      LOGO CTRL ALT JAM CARNAVAL_20: 3618642047710406378
+      LOGO CTRL ALT JAM CARNAVAL_21: -7446858228327106330
+      LOGO CTRL ALT JAM CARNAVAL_22: 6315595377843501074
+      LOGO CTRL ALT JAM CARNAVAL_23: 9002662148021968747
+      LOGO CTRL ALT JAM CARNAVAL_24: -2323267204914015856
+      LOGO CTRL ALT JAM CARNAVAL_25: 1388534612763055750
+      LOGO CTRL ALT JAM CARNAVAL_26: 8542896558742777545
+      LOGO CTRL ALT JAM CARNAVAL_27: 6660136191071591232
+      LOGO CTRL ALT JAM CARNAVAL_28: 3033723105315474957
+      LOGO CTRL ALT JAM CARNAVAL_29: -8625608722049128914
+      LOGO CTRL ALT JAM CARNAVAL_3: 3401634027831514910
+      LOGO CTRL ALT JAM CARNAVAL_30: 4543839431997297088
+      LOGO CTRL ALT JAM CARNAVAL_31: -8150192592075573774
+      LOGO CTRL ALT JAM CARNAVAL_32: -3221996754510613088
+      LOGO CTRL ALT JAM CARNAVAL_33: -1604411825089213363
+      LOGO CTRL ALT JAM CARNAVAL_34: 678531195766019176
+      LOGO CTRL ALT JAM CARNAVAL_35: 4352467502279612170
+      LOGO CTRL ALT JAM CARNAVAL_36: -5315363618490507638
+      LOGO CTRL ALT JAM CARNAVAL_37: 6856496440896258573
+      LOGO CTRL ALT JAM CARNAVAL_4: -1560730163817145093
+      LOGO CTRL ALT JAM CARNAVAL_5: 5082641936069429364
+      LOGO CTRL ALT JAM CARNAVAL_6: -405231615096958668
+      LOGO CTRL ALT JAM CARNAVAL_7: 768480507960870756
+      LOGO CTRL ALT JAM CARNAVAL_8: 7764678827948721596
+      LOGO CTRL ALT JAM CARNAVAL_9: 478856664651950590
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

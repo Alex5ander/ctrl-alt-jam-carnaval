@@ -26,4 +26,9 @@ public class MissionData : ScriptableObject
         IsVisible = false;
         Listener.Invoke();
     }
+
+    public void Complete()
+    {
+        Listener.Invoke();
+    }
 }
