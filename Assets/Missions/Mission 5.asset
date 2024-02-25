@@ -10,5 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c06a50c1d2513864e82d71a5d46e2c3a, type: 3}
-  m_Name: MissionData
+  m_Name: Mission 5
   m_EditorClassIdentifier: 
+  Title: "Miss\xE3o 5"
+  Description: "Fogo no parquinho? Dispare o alarme de inc\xEAndio para criar o caos
+    em Greenville. Hora de causar uma confus\xE3o \xE9pica e sair correndo antes
+    que as autoridades cheguem!"
+  Completed: 0

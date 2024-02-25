@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06a50c1d2513864e82d71a5d46e2c3a, type: 3}
+  m_Name: Mission 3
+  m_EditorClassIdentifier: 
+  Title: "Miss\xE3o 3"
+  Description: "Cheiro de encrenca no ar! Colete ovos podres e lance-os na pra\xE7a
+    central de Greenville. Prepare-se para fazer as pessoas torcerem o nariz e correr."
+  Completed: 0

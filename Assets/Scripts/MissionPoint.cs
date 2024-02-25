@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class Citizen : MonoBehaviour
+public class MissionPoint : MonoBehaviour
 {
-    [SerializeField] float Range;
-    [SerializeField] float Speed;
-    [SerializeField] PoliceOfficers policeOfficers;
     [SerializeField] CircleCollider2D circleCollider2D;
+    [SerializeField] float Range;
+    [SerializeField] Mission mission;
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -16,21 +16,30 @@ public class Citizen : MonoBehaviour
     {
 
     }
+
     void OnValidate()
     {
         circleCollider2D.radius = Range;
     }
+
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, Range);
+        Gizmos.DrawWireSphere(transform.position, circleCollider2D.radius);
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
         if (collider2D.CompareTag("Player"))
         {
-            policeOfficers.Call(transform.position);
+            MissionDialog.Instance.Toggle(mission);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("Player"))
+        {
+            MissionDialog.Instance.Toggle(mission);
         }
     }
 }

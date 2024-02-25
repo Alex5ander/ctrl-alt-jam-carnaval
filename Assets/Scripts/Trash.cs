@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public class HidingPlace : MonoBehaviour
+public class Trash : MonoBehaviour
 {
-    [SerializeField] float Range;
     [SerializeField] CircleCollider2D circleCollider2D;
+    [SerializeField] float Range;
+    bool broken = false;
+    bool near = false;
+    public static int totalBroken = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +16,12 @@ public class HidingPlace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (near && Input.GetKeyUp(KeyCode.Space) && broken == false)
+        {
+            transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
+            totalBroken += 1;
+            broken = true;
+        }
     }
 
     void OnValidate()
@@ -30,7 +38,7 @@ public class HidingPlace : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
-            collider2D.gameObject.GetComponent<PlayerController>().SetHidde(true);
+            near = true;
         }
     }
 
@@ -38,7 +46,7 @@ public class HidingPlace : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
-            collider2D.gameObject.GetComponent<PlayerController>().SetHidde(false);
+            near = false;
         }
     }
 }

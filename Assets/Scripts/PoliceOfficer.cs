@@ -4,15 +4,15 @@ public class PoliceOfficer : MonoBehaviour
 {
     [SerializeField] float Range;
     [SerializeField] float Speed;
+    [SerializeField] CircleCollider2D circleCollider2D;
     [SerializeField] Transform pointA;
     [SerializeField] Transform pointB;
     [SerializeField] public Transform patrolArea;
-    [SerializeField] PlayerStats playerStats;
     [SerializeField] PoliceOfficers policeOfficers;
     Animator animator;
     Vector3 target;
-    public bool IsPatrol = false;
-    bool IgnoreRange = false;
+    PlayerController playerController;
+    bool IsPatrol = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,30 +28,14 @@ public class PoliceOfficer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        float targetDistance = Vector2.Distance(playerStats.position, transform.position);
-        if ((targetDistance < Range || IgnoreRange) && !playerStats.hidden)
+        if (transform.position == target && IsPatrol)
         {
-            IsPatrol = false;
-            target = playerStats.position;
+            target = target == pointA.position ? pointB.position : pointA.position;
         }
-        else if (transform.position != patrolArea.position && IsPatrol == false)
+        if (IsPatrol == false)
         {
-            target = patrolArea.position;
+            target = playerController.transform.position;
         }
-        else if (transform.position == patrolArea.position)
-        {
-            IsPatrol = true;
-            IgnoreRange = false;
-        }
-
-        if (IsPatrol)
-        {
-            if (transform.position == target)
-            {
-                target = target == pointA.position ? pointB.position : pointA.position;
-            }
-        }
-
         Vector2 direction = (target - transform.position).normalized;
         transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.fixedDeltaTime);
         animator.SetFloat("MoveX", direction.x);
@@ -59,19 +43,41 @@ public class PoliceOfficer : MonoBehaviour
     }
     public void Call()
     {
-        IgnoreRange = true;
+
     }
-    private void OnDrawGizmos()
+    void OnValidate()
+    {
+        circleCollider2D.radius = Range;
+    }
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision2D)
+    void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.collider.CompareTag("Player") && playerStats.hidden == false)
+        if (collision2D.collider.CompareTag("Player"))
         {
             GameManager.Instance.GameOver();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("Player"))
+        {
+            IsPatrol = false;
+            playerController = collider2D.gameObject.GetComponent<PlayerController>();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider2D)
+    {
+        if (collider2D.CompareTag("Player"))
+        {
+            IsPatrol = true;
+            target = patrolArea.position;
         }
     }
 }

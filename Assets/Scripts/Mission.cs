@@ -1,84 +1,31 @@
+using System;
 using UnityEngine;
-using UnityEngine.UI;
-
-public class Mission : MonoBehaviour
+[CreateAssetMenu]
+public class Mission : ScriptableObject
 {
-    [SerializeField] string Description;
-    [SerializeField] float Range;
-    [SerializeField] PlayerStats playerStats;
-    [SerializeField] Mission MissionRequired;
-    [SerializeField] MissionData missionData;
-    [SerializeField] public int maxScore;
-    [SerializeField] public int score;
-    [SerializeField] Image MissionUI;
+    public string Title;
+    [TextArea]
+    public string Description;
+    public Action<Mission> Listener;
     public bool Completed = false;
-    bool IsVisible = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        float distance = Vector3.Distance(transform.position, playerStats.position);
-        if (distance < Range)
-        {
-            ShowDialog();
-            if (playerStats.mission == null && IsAvailable())
-            {
-                playerStats.mission = this;
-            }
-        }
-        else if (distance > Range && IsVisible)
-        {
-            HideDialog();
-        }
-    }
-
-    public void CompleteMission()
-    {
-        Completed = true;
-        playerStats.missionsCompleted.Add(playerStats.mission);
-        playerStats.mission = null;
-        playerStats.TimeLeft = playerStats.MaxTimeLeft;
-        MissionUI.color = Color.green;
-        missionData.Complete();
-        if (playerStats.missionsCompleted.Count == 5)
-        {
-            GameManager.Instance.GameOver();
-        }
-    }
-
-    void ShowDialog()
-    {
-        IsVisible = true;
-        if (IsAvailable())
-        {
-            missionData.Set(name, Description);
-        }
-        else if (Completed)
-        {
-            missionData.Set(name, "Missão completada");
-        }
-        else if (MissionRequired != null)
-        {
-            missionData.Set("Missão bloqueada", MissionRequired.name + " deve ser completada antes.");
-        }
-        missionData.Open();
-    }
-
-    void HideDialog()
-    {
-        IsVisible = false;
-        missionData.Close();
-    }
-
-    bool IsAvailable() => !Completed && (playerStats.missionsCompleted.Contains(MissionRequired) || MissionRequired == null);
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, Range);
-    }
 }
+
+// 1
+// Pegue o balde de tinta e pinte as 3 paredes demarcadas no mapa. 
+// Seja criativo e transforme Greenville em uma galeria de arte a céu aberto!
+
+// 2
+// É hora da festa do lixo! Derrube 5 lixeiras e espalhe a bagunça pela cidade. 
+// Vamos causar o caos e deixar a sujeira falar.
+
+// 3
+// Cheiro de encrenca no ar! Colete ovos podres e lance-os na praça central de Greenville. 
+// Prepare-se para fazer as pessoas torcerem o nariz e correr.
+
+// 4
+// Encontre e quebre 5 hidrantes pela cidade. 
+// Vamos transformar Greenville em uma festa aquática bem diferente.
+
+// 5
+// Fogo no parquinho? Dispare o alarme de incêndio para criar o caos em Greenville. 
+// Hora de causar uma confusão épica e sair correndo antes que as autoridades cheguem!

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7696149737224042857}
   - component: {fileID: 5846795508519095603}
   - component: {fileID: 1463492687044465161}
+  - component: {fileID: 2454446458555912303}
   - component: {fileID: 12281409681406979}
   m_Layer: 0
   m_Name: Citizen
@@ -132,6 +133,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.8}
   m_EdgeRadius: 0
+--- !u!58 &2454446458555912303
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744359534051403384}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4
 --- !u!114 &12281409681406979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5071425c1883afd4887ca97164f875bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 11400000, guid: fa8a04ba6a7349d40b61c15de19ab686, type: 2}
-  Range: 1.5
+  Range: 4
   Speed: 0
   policeOfficers: {fileID: 11400000, guid: 74f76321859c0e346a4aada739fe4821, type: 2}
+  circleCollider2D: {fileID: 2454446458555912303}

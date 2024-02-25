@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -14,12 +15,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] CanvasGroup GameOverDialog;
     [SerializeField] Image GameOverDialogImage;
     [SerializeField] TextMeshProUGUI GameOverMessage;
-    [SerializeField] CanvasGroup PauseDialog;
     public static GameManager Instance { get; private set; }
     bool IsGameOver = false;
-    [SerializeField] PlayerStats playerStats;
     [SerializeField] PoliceOfficers policeOfficers;
-    [SerializeField] ParticleSystem particles;
     List<string> GameWinMessages = new(){
         "Missão cumprida! Você deixou sua marca e Greenville nunca mais será a mesma.",
         "Vitória! Você é o rei da travessura, e Greenville é seu reino de diversão e caos!",
@@ -33,6 +31,7 @@ public class GameManager : MonoBehaviour
         "Você falhou em sua missão de causar caos e Greenville ainda permanece intacta.",
         "Oops! Parece que o sol se pôs sobre suas travessuras. Mas não se preocupe, amanhã é outro dia e você poderá causar o caos em Greenville!"
     };
+    float seconds = 120;
     void Awake()
     {
         if (Instance != null)
@@ -45,6 +44,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         policeOfficers.list.Clear();
+        Hydrant.totalBroken = 0;
+        Trash.totalBroken = 0;
+        House.totalPainted = 0;
+        StartCoroutine(StartTimer());
     }
 
     // Update is called once per frame
@@ -52,31 +55,21 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.P) && !IsGameOver)
         {
-            Pause();
+            PauseDialog.Instance.Pause();
         }
     }
 
-    void FixedUpdate()
+    IEnumerator StartTimer()
     {
-        if (playerStats.TimeLeft > 0)
+        while (seconds != 0)
         {
-            playerStats.TimeLeft -= Time.fixedDeltaTime;
+            seconds -= 1;
+            TimerUI.SetText(TimeSpan.FromSeconds(seconds).ToString(@"mm\:ss"));
+            yield return new WaitForSeconds(1);
         }
-        if (playerStats.TimeLeft < 0)
-        {
-            playerStats.TimeLeft = 0;
-            GameOver();
-        }
-        TimerUI.text = TimeSpan.FromSeconds(playerStats.TimeLeft).ToString(@"m\:ss");
+        GameOver();
     }
-    void Pause()
-    {
-        PauseDialog.alpha = PauseDialog.alpha == 1 ? 0 : 1;
-        PauseDialog.blocksRaycasts = !PauseDialog.blocksRaycasts;
-        PauseDialog.interactable = !PauseDialog.interactable;
-        Time.timeScale = Time.timeScale == 0 ? 1 : 0;
-    }
-    public void GameOver()
+    public void GameOver(bool win = false)
     {
         IsGameOver = true;
         Time.timeScale = 0;
@@ -85,7 +78,7 @@ public class GameManager : MonoBehaviour
         GameOverDialog.interactable = true;
         string message = GameLostMessages[UnityEngine.Random.Range(0, GameLostMessages.Count)];
         Color color = GameOverDialogColor;
-        if (playerStats.missionsCompleted.Count == 5)
+        if (win)
         {
             message = GameWinMessages[UnityEngine.Random.Range(0, GameWinMessages.Count)];
             color = GameWinDialogColor;
@@ -93,10 +86,6 @@ public class GameManager : MonoBehaviour
         GameOverMessage.text = message;
         GameOverDialogImage.color = color;
         policeOfficers.list.Clear();
-    }
-    public void StartParticles()
-    {
-        particles.Play();
     }
     static public void LoadMainScene() => SceneManager.LoadScene(0);
 }
