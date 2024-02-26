@@ -16,7 +16,7 @@ public class Trash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (near && Input.GetKeyUp(KeyCode.Space) && broken == false)
+        if (near && Input.GetKeyUp(KeyCode.Z) && broken == false)
         {
             transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
             totalBroken += 1;

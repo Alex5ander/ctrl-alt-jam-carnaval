@@ -15,7 +15,7 @@ public class Alarm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && near && alarmRinging == false)
+        if (Input.GetKeyUp(KeyCode.Z) && near && alarmRinging == false)
         {
             alarmRinging = true;
         }

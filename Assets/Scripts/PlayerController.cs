@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveY", vertical);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.X))
         {
             if (collectible != null)
             {

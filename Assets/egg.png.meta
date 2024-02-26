@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e993340ee3c58dc4da228446be834900
+guid: 155ba23e5f3a2374caac8a235a1a4085
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1950649631777862035
-    second: splat01_0
+      213: -4072622106568590741
+    second: egg_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: splat01_0
+      name: egg_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 34
-        width: 482
-        height: 444
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 391bd5f4189121b10800000000000000
-      internalID: 1950649631777862035
+      spriteID: b6a739195c32b77c0800000000000000
+      internalID: -4072622106568590741
       vertices: []
       indices: 
       edges: []
@@ -145,7 +145,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      splat01_0: 1950649631777862035
+      egg_0: -4072622106568590741
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

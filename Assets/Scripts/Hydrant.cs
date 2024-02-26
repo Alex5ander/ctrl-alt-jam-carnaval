@@ -3,6 +3,7 @@ using UnityEngine;
 public class Hydrant : MonoBehaviour
 {
     [SerializeField] CircleCollider2D circleCollider2D;
+    [SerializeField] ParticleSystem particles;
     [SerializeField] float Range;
     bool broken = false;
     bool near = false;
@@ -16,10 +17,10 @@ public class Hydrant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (near && Input.GetKeyUp(KeyCode.Space) && broken == false)
+        if (near && Input.GetKeyUp(KeyCode.Z) && broken == false)
         {
-            transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
             totalBroken += 1;
+            particles.gameObject.SetActive(true);
             broken = true;
         }
     }
