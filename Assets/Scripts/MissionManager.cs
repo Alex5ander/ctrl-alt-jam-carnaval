@@ -14,6 +14,7 @@ public class MissionManager : MonoBehaviour
         {
             mission.Completed = false;
         }
+        PauseDialog.Instance.Init();
     }
 
     // Update is called once per frame

@@ -6,17 +6,12 @@ public class PauseDialog : MonoBehaviour
     [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] MissionItemUI missionItemUIPrefab;
     [SerializeField] VerticalLayoutGroup verticalLayoutGroup;
+    [SerializeField] MissionManager missionManager;
     public static PauseDialog Instance;
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-        foreach (Mission mission in MissionManager.Instance.Missions)
-        {
-            MissionItemUI missionItemUI = Instantiate(missionItemUIPrefab);
-            missionItemUI.Init(mission);
-            missionItemUI.transform.SetParent(verticalLayoutGroup.transform, false);
-        }
     }
 
     // Update is called once per frame
@@ -31,5 +26,15 @@ public class PauseDialog : MonoBehaviour
         canvasGroup.blocksRaycasts = !canvasGroup.blocksRaycasts;
         canvasGroup.interactable = !canvasGroup.interactable;
         Time.timeScale = (uint)Time.timeScale ^ 1;
+    }
+
+    public void Init()
+    {
+        foreach (Mission mission in MissionManager.Instance.Missions)
+        {
+            MissionItemUI missionItemUI = Instantiate(missionItemUIPrefab);
+            missionItemUI.Init(mission);
+            missionItemUI.transform.SetParent(verticalLayoutGroup.transform, false);
+        }
     }
 }

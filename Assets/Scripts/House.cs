@@ -24,6 +24,7 @@ public class House : MonoBehaviour
             spriteMask.enabled = true;
             totalPainted += 1;
             painted = true;
+            PoliceOfficers.Call(transform.position);
             Destroy(paintBucket.gameObject);
         }
     }

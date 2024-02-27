@@ -5,20 +5,18 @@ public class PoliceOfficer : MonoBehaviour
     [SerializeField] float Range;
     [SerializeField] float Speed;
     [SerializeField] CircleCollider2D circleCollider2D;
-    [SerializeField] Transform pointA;
-    [SerializeField] Transform pointB;
-    [SerializeField] public Transform patrolArea;
-    [SerializeField] PoliceOfficers policeOfficers;
+    [SerializeField] Vector2 pointA;
+    [SerializeField] Vector2 pointB;
     Animator animator;
-    Vector3 target;
-    PlayerController playerController;
+    Vector2 target;
     bool IsPatrol = true;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        policeOfficers.list.Add(this);
-        target = pointA.position;
+        pointA += (Vector2)transform.position;
+        pointB += (Vector2)transform.position;
+        target = pointA;
     }
 
     // Update is called once per frame
@@ -28,22 +26,30 @@ public class PoliceOfficer : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (transform.position == target && IsPatrol)
+        if (IsPatrol)
         {
-            target = target == pointA.position ? pointB.position : pointA.position;
+            if (transform.position == (Vector3)target)
+            {
+                target = target == pointA ? pointB : pointA;
+            }
         }
-        if (IsPatrol == false)
+        else if (!PoliceOfficers.Instance.playerController.hidde)
         {
-            target = playerController.transform.position;
+            target = PoliceOfficers.Instance.playerController.transform.position;
         }
-        Vector2 direction = (target - transform.position).normalized;
-        transform.position = Vector3.MoveTowards(transform.position, target, Speed * Time.fixedDeltaTime);
+        else
+        {
+            IsPatrol = true;
+            target = pointA;
+        }
+        Vector2 direction = ((Vector3)target - transform.position).normalized;
+        transform.position = Vector3.MoveTowards(transform.position, (Vector3)target, Speed * Time.fixedDeltaTime);
         animator.SetFloat("MoveX", direction.x);
         animator.SetFloat("MoveY", direction.y);
     }
     public void Call()
     {
-
+        IsPatrol = false;
     }
     void OnValidate()
     {
@@ -53,11 +59,15 @@ public class PoliceOfficer : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, Range);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + (Vector3)pointA, 0.25f);
+        Gizmos.DrawWireSphere(transform.position + (Vector3)pointB, 0.25f);
     }
 
     void OnCollisionEnter2D(Collision2D collision2D)
     {
-        if (collision2D.collider.CompareTag("Player"))
+        if (collision2D.collider.CompareTag("Player") && !PoliceOfficers.Instance.playerController.hidde)
         {
             GameManager.Instance.GameOver();
         }
@@ -65,10 +75,9 @@ public class PoliceOfficer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.CompareTag("Player"))
+        if (collider2D.CompareTag("Player") && !PoliceOfficers.Instance.playerController.hidde)
         {
             IsPatrol = false;
-            playerController = collider2D.gameObject.GetComponent<PlayerController>();
         }
     }
 
@@ -77,7 +86,6 @@ public class PoliceOfficer : MonoBehaviour
         if (collider2D.CompareTag("Player"))
         {
             IsPatrol = true;
-            target = patrolArea.position;
         }
     }
 }

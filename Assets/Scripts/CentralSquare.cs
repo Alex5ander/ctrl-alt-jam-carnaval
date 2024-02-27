@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class CentralSquare : MonoBehaviour
 {
-    [SerializeField] CircleCollider2D circleCollider2D;
-    [SerializeField] GameObject particles;
-    [SerializeField] float Range;
+    [SerializeField] BoxCollider2D boxCollider2D;
     public static bool dirty = false;
     // Start is called before the first frame update
     void Start()
@@ -18,24 +16,16 @@ public class CentralSquare : MonoBehaviour
 
     }
 
-    void OnValidate()
-    {
-        circleCollider2D.radius = Range;
-    }
-
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, Range);
+        Gizmos.DrawWireCube(transform.position, boxCollider2D.size);
     }
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.TryGetComponent(out Egg egg) && !dirty)
+        if (collider2D.TryGetComponent(out Egg _) && !dirty)
         {
             dirty = true;
-            particles.transform.position = egg.transform.position;
-            particles.SetActive(true);
-            Destroy(egg.gameObject);
         }
     }
 }

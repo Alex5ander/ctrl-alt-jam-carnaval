@@ -3,6 +3,7 @@ using UnityEngine;
 public class Alarm : MonoBehaviour
 {
     [SerializeField] CircleCollider2D circleCollider2D;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] float Range;
     bool near = false;
     public static bool alarmRinging = false;
@@ -17,6 +18,7 @@ public class Alarm : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Z) && near && alarmRinging == false)
         {
+            audioSource.enabled = true;
             alarmRinging = true;
         }
     }

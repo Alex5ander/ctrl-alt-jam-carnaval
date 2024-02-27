@@ -22,6 +22,7 @@ public class Hydrant : MonoBehaviour
             totalBroken += 1;
             particles.gameObject.SetActive(true);
             broken = true;
+            PoliceOfficers.Call(transform.position);
         }
     }
 

@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI GameOverMessage;
     public static GameManager Instance { get; private set; }
     bool IsGameOver = false;
-    [SerializeField] PoliceOfficers policeOfficers;
     List<string> GameWinMessages = new(){
         "Missão cumprida! Você deixou sua marca e Greenville nunca mais será a mesma.",
         "Vitória! Você é o rei da travessura, e Greenville é seu reino de diversão e caos!",
@@ -43,10 +42,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        policeOfficers.list.Clear();
         Hydrant.totalBroken = 0;
         Trash.totalBroken = 0;
         House.totalPainted = 0;
+        Alarm.alarmRinging = false;
         StartCoroutine(StartTimer());
     }
 
@@ -85,7 +84,6 @@ public class GameManager : MonoBehaviour
         }
         GameOverMessage.text = message;
         GameOverDialogImage.color = color;
-        policeOfficers.list.Clear();
     }
     static public void LoadMainScene() => SceneManager.LoadScene(0);
 }

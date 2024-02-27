@@ -21,6 +21,7 @@ public class Trash : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
             totalBroken += 1;
             broken = true;
+            PoliceOfficers.Call(transform.position);
         }
     }
 

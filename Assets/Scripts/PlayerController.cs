@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat("LastMoveY", vertical);
         }
 
-        if (Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.X) && !hidde)
         {
             if (collectible != null)
             {
@@ -57,14 +57,7 @@ public class PlayerController : MonoBehaviour
         this.hidde = hidde;
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Color color = spriteRenderer.color;
-        if (hidde)
-        {
-            color.a = 0.5f;
-        }
-        else
-        {
-            color.a = 1;
-        }
+        color.a = hidde ? 0.5f : 1;
         spriteRenderer.color = color;
     }
 }

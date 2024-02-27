@@ -5,6 +5,7 @@ public class Egg : MonoBehaviour, ThrowableItem
     Vector3 direction;
     bool used = false;
     [SerializeField] float Speed;
+    [SerializeField] ParticleSystem particles;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class Egg : MonoBehaviour, ThrowableItem
     }
     void FixedUpdate()
     {
-        if (used)
+        if (used && !particles.gameObject.activeSelf)
         {
             transform.position = Vector2.MoveTowards(transform.position, transform.position + direction, Time.fixedDeltaTime * Speed);
         }
@@ -26,13 +27,18 @@ public class Egg : MonoBehaviour, ThrowableItem
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.TryGetComponent(out PlayerController playerController) && !used)
+        if (collider2D.TryGetComponent(out PlayerController playerController))
         {
-            if (playerController.collectible == null)
+            if (playerController.collectible == null && !used)
             {
                 playerController.collectible = this;
                 gameObject.SetActive(false);
             }
+        }
+        else if (used)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            particles.gameObject.SetActive(true);
         }
     }
 
