@@ -5,8 +5,8 @@ public class Alarm : MonoBehaviour
     [SerializeField] CircleCollider2D circleCollider2D;
     [SerializeField] AudioSource audioSource;
     [SerializeField] float Range;
+    [SerializeField] Mission mission;
     bool near = false;
-    public static bool alarmRinging = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,10 @@ public class Alarm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Z) && near && alarmRinging == false)
+        if (Input.GetKeyUp(KeyCode.Z) && near && !audioSource.enabled)
         {
             audioSource.enabled = true;
-            alarmRinging = true;
+            mission.AddScore();
         }
     }
 

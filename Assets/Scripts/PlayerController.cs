@@ -1,19 +1,22 @@
 using UnityEngine;
 
-public interface ThrowableItem
+public abstract class ThrowableItem : MonoBehaviour
 {
-    public void Use(Vector2 position, Vector2 direction);
+    public bool used = false;
+    public abstract void Use(Vector2 position, Vector2 direction);
 }
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float Speed;
+    [SerializeField] Player player;
+    [SerializeField] GameEvents gameEvents;
     float horizontal = 0;
     float vertical = 0;
     Animator animator;
     Rigidbody2D rigidBody2D;
-    public bool hidde = false;
-    public ThrowableItem collectible;
+    bool hidde = false;
+    public ThrowableItem item;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,18 +41,34 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.X) && !hidde)
         {
-            if (collectible != null)
+            if (item != null)
             {
-                collectible.Use(transform.position, new(animator.GetFloat("LastMoveX"), animator.GetFloat("LastMoveY")));
-                collectible = null;
+                item.Use(transform.position, new(animator.GetFloat("LastMoveX"), animator.GetFloat("LastMoveY")));
+                item = null;
+                gameEvents.SetItemSprite(null);
             }
         }
+        player.position = transform.position;
+        player.hidde = hidde;
     }
 
     void FixedUpdate()
     {
         Vector2 newPos = transform.position + Speed * Time.fixedDeltaTime * new Vector3(horizontal, vertical).normalized;
         rigidBody2D.MovePosition(newPos);
+    }
+
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if (collider2D.TryGetComponent(out ThrowableItem item))
+        {
+            if (!item.used && this.item == null)
+            {
+                gameEvents.SetItemSprite(collider2D.gameObject.GetComponent<SpriteRenderer>().sprite);
+                collider2D.gameObject.SetActive(false);
+                this.item = item;
+            }
+        }
     }
 
     public void SetHidde(bool hidde)

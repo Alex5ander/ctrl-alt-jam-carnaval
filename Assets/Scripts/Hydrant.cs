@@ -5,9 +5,10 @@ public class Hydrant : MonoBehaviour
     [SerializeField] CircleCollider2D circleCollider2D;
     [SerializeField] ParticleSystem particles;
     [SerializeField] float Range;
+    [SerializeField] Mission mission;
+    [SerializeField] GameEvents gameEvents;
     bool broken = false;
     bool near = false;
-    public static int totalBroken = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,12 @@ public class Hydrant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (near && Input.GetKeyUp(KeyCode.Z) && broken == false)
+        if (near && Input.GetKeyUp(KeyCode.Z) && !broken)
         {
-            totalBroken += 1;
-            particles.gameObject.SetActive(true);
             broken = true;
-            PoliceOfficers.Call(transform.position);
+            particles.gameObject.SetActive(true);
+            mission.AddScore();
+            gameEvents.CallPolice(transform.position);
         }
     }
 
@@ -40,6 +41,7 @@ public class Hydrant : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
+            gameEvents.SetHint("Precione Z para interagir");
             near = true;
         }
     }
@@ -48,6 +50,7 @@ public class Hydrant : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
+            gameEvents.SetHint("");
             near = false;
         }
     }

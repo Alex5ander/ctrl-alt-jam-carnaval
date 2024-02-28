@@ -4897,10 +4897,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6286823687171521146}
-  - component: {fileID: 5464008250130434241}
   - component: {fileID: 7133851541070898014}
   - component: {fileID: 7074210023224654349}
   - component: {fileID: 7779548623510561266}
+  - component: {fileID: 5464008250130434241}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -4924,20 +4924,6 @@ Transform:
   - {fileID: 4032189334607432045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5464008250130434241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9103271718831815212}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f52ddcc3e490f47a1651b7d0877585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 10
-  particles: {fileID: 5155384133112657383}
 --- !u!212 &7133851541070898014
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5053,3 +5039,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5464008250130434241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9103271718831815212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73f52ddcc3e490f47a1651b7d0877585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
+  particles: {fileID: 5155384133112657383}

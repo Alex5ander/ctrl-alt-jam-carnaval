@@ -15,4 +15,5 @@ MonoBehaviour:
   Title: "Miss\xE3o 3"
   Description: "Cheiro de encrenca no ar! Colete ovos podres e lance-os na pra\xE7a
     central de Greenville. Prepare-se para fazer as pessoas torcerem o nariz e correr."
-  Completed: 0
+  score: 0
+  maxScore: 1

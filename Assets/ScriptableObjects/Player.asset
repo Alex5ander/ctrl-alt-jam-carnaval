@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06a50c1d2513864e82d71a5d46e2c3a, type: 3}
-  m_Name: Mission 2
+  m_Script: {fileID: 11500000, guid: a20b762215ccba64186a1520377fcf81, type: 3}
+  m_Name: Player
   m_EditorClassIdentifier: 
-  Title: "Miss\xE3o 2"
-  Description: "\xC9 hora da festa do lixo! Derrube 5 lixeiras e espalhe a bagun\xE7a
-    pela cidade. Vamos causar o caos e deixar a sujeira falar."
-  Completed: 0
+  position: {x: 0, y: 0, z: 0}
+  hidde: 0

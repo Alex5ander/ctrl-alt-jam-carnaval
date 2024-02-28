@@ -17,7 +17,7 @@ public class MissionDialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MissionProgressText.text = "Missões: " + MissionManager.Instance.TotalCompleted + "/" + MissionManager.Instance.Missions.Count;
+
     }
 
     public void Toggle(Mission mission)

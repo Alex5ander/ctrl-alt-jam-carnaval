@@ -185,6 +185,8 @@ MonoBehaviour:
   circleCollider2D: {fileID: 8204519433212818387}
   particles: {fileID: 2606203812377684782}
   Range: 0.5
+  mission: {fileID: 11400000, guid: 34613405fd2840d438878a79ab1c8ecc, type: 2}
+  gameEvents: {fileID: 11400000, guid: 1e46717d3be214844af5f17990058a2c, type: 2}
 --- !u!1 &6144961996950334327
 GameObject:
   m_ObjectHideFlags: 0

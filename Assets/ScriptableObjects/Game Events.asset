@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06a50c1d2513864e82d71a5d46e2c3a, type: 3}
-  m_Name: Mission 4
+  m_Script: {fileID: 11500000, guid: 91cb89725f5c6034c944e11a60fcd6e8, type: 3}
+  m_Name: Game Events
   m_EditorClassIdentifier: 
-  Title: "Miss\xE3o 4"
-  Description: "Encontre e quebre 5 hidrantes pela cidade. Vamos transformar Greenville
-    em uma festa aqu\xE1tica bem diferente."
-  Completed: 0
+  policeOfficers: []

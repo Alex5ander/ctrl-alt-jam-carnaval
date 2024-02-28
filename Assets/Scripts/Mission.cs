@@ -1,13 +1,32 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
+
+public interface IMissionEventListener
+{
+    public abstract void OnCompleted();
+}
 [CreateAssetMenu]
 public class Mission : ScriptableObject
 {
     public string Title;
     [TextArea]
     public string Description;
-    public Action<Mission> Listener;
+    public List<IMissionEventListener> listeners = new();
+    public int score = 0;
+    public int maxScore = 0;
     public bool Completed = false;
+    public void AddScore()
+    {
+        score += 1;
+        if (score >= maxScore)
+        {
+            Completed = true;
+            foreach (IMissionEventListener missionEventListener in listeners)
+            {
+                missionEventListener.OnCompleted();
+            }
+        }
+    }
 }
 
 // 1

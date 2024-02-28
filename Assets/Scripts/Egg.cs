@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class Egg : MonoBehaviour, ThrowableItem
+public class Egg : ThrowableItem
 {
     Vector3 direction;
-    bool used = false;
     [SerializeField] float Speed;
     [SerializeField] ParticleSystem particles;
     // Start is called before the first frame update
@@ -27,22 +26,14 @@ public class Egg : MonoBehaviour, ThrowableItem
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.TryGetComponent(out PlayerController playerController))
-        {
-            if (playerController.collectible == null && !used)
-            {
-                playerController.collectible = this;
-                gameObject.SetActive(false);
-            }
-        }
-        else if (used)
+        if (!collider2D.TryGetComponent(out PlayerController _) && used)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             particles.gameObject.SetActive(true);
         }
     }
 
-    public void Use(Vector2 position, Vector2 direction)
+    public override void Use(Vector2 position, Vector2 direction)
     {
         transform.position = position;
         this.direction = direction;

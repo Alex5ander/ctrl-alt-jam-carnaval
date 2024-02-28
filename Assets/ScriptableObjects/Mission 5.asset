@@ -16,4 +16,5 @@ MonoBehaviour:
   Description: "Fogo no parquinho? Dispare o alarme de inc\xEAndio para criar o caos
     em Greenville. Hora de causar uma confus\xE3o \xE9pica e sair correndo antes
     que as autoridades cheguem!"
-  Completed: 0
+  score: 0
+  maxScore: 1

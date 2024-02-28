@@ -5,9 +5,11 @@ public class Citizen : MonoBehaviour
     [SerializeField] float Range;
     [SerializeField] float Speed;
     [SerializeField] CircleCollider2D circleCollider2D;
+    [SerializeField] GameEvents gameEvents;
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class Citizen : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
-            PoliceOfficers.Call(transform.position);
+            gameEvents.CallPolice(transform.position);
         }
     }
 }

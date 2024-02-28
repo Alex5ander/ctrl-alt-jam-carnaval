@@ -4,9 +4,10 @@ public class Trash : MonoBehaviour
 {
     [SerializeField] CircleCollider2D circleCollider2D;
     [SerializeField] float Range;
+    [SerializeField] Mission mission;
+    [SerializeField] GameEvents gameEvents;
     bool broken = false;
     bool near = false;
-    public static int totalBroken = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +17,12 @@ public class Trash : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (near && Input.GetKeyUp(KeyCode.Z) && broken == false)
+        if (near && Input.GetKeyUp(KeyCode.Z) && !broken)
         {
             transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
-            totalBroken += 1;
             broken = true;
-            PoliceOfficers.Call(transform.position);
+            mission.AddScore();
+            gameEvents.CallPolice(transform.position);
         }
     }
 
@@ -39,6 +40,7 @@ public class Trash : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
+            gameEvents.SetHint("Precione Z para interagir");
             near = true;
         }
     }
@@ -47,6 +49,7 @@ public class Trash : MonoBehaviour
     {
         if (collider2D.CompareTag("Player"))
         {
+            gameEvents.SetHint("");
             near = false;
         }
     }

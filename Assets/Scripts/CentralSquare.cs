@@ -3,7 +3,9 @@ using UnityEngine;
 public class CentralSquare : MonoBehaviour
 {
     [SerializeField] BoxCollider2D boxCollider2D;
-    public static bool dirty = false;
+    [SerializeField] Mission mission;
+    [SerializeField] GameEvents gameEvents;
+    bool dirty = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class CentralSquare : MonoBehaviour
         if (collider2D.TryGetComponent(out Egg _) && !dirty)
         {
             dirty = true;
+            mission.AddScore();
+            gameEvents.CallPolice(transform.position);
         }
     }
 }

@@ -183,3 +183,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circleCollider2D: {fileID: 2748082694685253506}
   Range: 0.5
+  mission: {fileID: 11400000, guid: 174e916b4cd7f3245afeae8eabb4d395, type: 2}
+  gameEvents: {fileID: 11400000, guid: 1e46717d3be214844af5f17990058a2c, type: 2}

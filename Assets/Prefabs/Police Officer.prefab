@@ -237,3 +237,5 @@ MonoBehaviour:
   circleCollider2D: {fileID: 400882420255456040}
   pointA: {x: 0, y: 2}
   pointB: {x: 0, y: -2}
+  player: {fileID: 11400000, guid: 8f2088c511d63c34087071bd90093a0e, type: 2}
+  gameEvents: {fileID: 11400000, guid: 1e46717d3be214844af5f17990058a2c, type: 2}

@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class PaintBucket : MonoBehaviour, ThrowableItem
+public class PaintBucket : ThrowableItem
 {
-    bool used = false;
     Vector3 direction;
     [SerializeField] float Speed;
     // Start is called before the first frame update
@@ -25,19 +24,7 @@ public class PaintBucket : MonoBehaviour, ThrowableItem
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider2D)
-    {
-        if (collider2D.TryGetComponent(out PlayerController playerController) && !used)
-        {
-            if (playerController.collectible == null)
-            {
-                playerController.collectible = this;
-                gameObject.SetActive(false);
-            }
-        }
-    }
-
-    public void Use(Vector2 position, Vector2 direction)
+    public override void Use(Vector2 position, Vector2 direction)
     {
         transform.position = position;
         gameObject.SetActive(true);
