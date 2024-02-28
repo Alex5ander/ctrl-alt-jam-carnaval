@@ -9,6 +9,8 @@ public class ItemUI : MonoBehaviour, IItemListener
     void Start()
     {
         gameEvents.itemListeners.Add(this);
+        RectTransform rectTransform = ItemImageUI.rectTransform;
+        rectTransform.position = new Vector2(rectTransform.sizeDelta.x + Screen.safeArea.min.x, Screen.safeArea.max.y - rectTransform.sizeDelta.y);
     }
 
     // Update is called once per frame

@@ -6,7 +6,7 @@ public abstract class ThrowableItem : MonoBehaviour
     public abstract void Use(Vector2 position, Vector2 direction);
 }
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDpadListener
 {
     [SerializeField] float Speed;
     [SerializeField] Player player;
@@ -17,18 +17,35 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidBody2D;
     bool hidde = false;
     public ThrowableItem item;
+    KeyCode[] keyCodes = {
+        KeyCode.W,
+        KeyCode.A,
+        KeyCode.S,
+        KeyCode.D,
+        KeyCode.UpArrow,
+        KeyCode.RightArrow,
+        KeyCode.DownArrow,
+        KeyCode.LeftArrow
+    };
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rigidBody2D = GetComponent<Rigidbody2D>();
+        gameEvents.dpadListeners.Add(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal") * Time.timeScale;
-        vertical = Input.GetAxisRaw("Vertical") * Time.timeScale;
+        foreach (KeyCode keyCode in keyCodes)
+        {
+            if (Input.GetKeyDown(keyCode) || Input.GetKeyUp(keyCode))
+            {
+                horizontal = Input.GetAxisRaw("Horizontal") * Time.timeScale;
+                vertical = Input.GetAxisRaw("Vertical") * Time.timeScale;
+            }
+        }
 
         animator.SetFloat("MoveX", horizontal);
         animator.SetFloat("MoveY", vertical);
@@ -78,5 +95,11 @@ public class PlayerController : MonoBehaviour
         Color color = spriteRenderer.color;
         color.a = hidde ? 0.5f : 1;
         spriteRenderer.color = color;
+    }
+
+    public void OnTouchChange(Vector2 direction)
+    {
+        horizontal = direction.x;
+        vertical = direction.y;
     }
 }

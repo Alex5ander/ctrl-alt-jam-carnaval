@@ -17,6 +17,10 @@ public interface IHintListener
     public void OnEmit(string hint);
 }
 
+public interface IDpadListener
+{
+    public void OnTouchChange(Vector2 direction);
+}
 [CreateAssetMenu]
 
 public class GameEvents : ScriptableObject
@@ -25,7 +29,7 @@ public class GameEvents : ScriptableObject
     public List<IItemListener> itemListeners = new();
     public List<PoliceOfficer> policeOfficers = new();
     public List<IHintListener> hintListeners = new();
-
+    public List<IDpadListener> dpadListeners = new();
     public void GameOver(bool win = false)
     {
         foreach (IGameOverListener listener in gameOverListeners)
@@ -62,6 +66,14 @@ public class GameEvents : ScriptableObject
         foreach (IHintListener hintListener in hintListeners)
         {
             hintListener.OnEmit(hint);
+        }
+    }
+
+    public void OnTouchChange(Vector2 direction)
+    {
+        foreach (IDpadListener dpadListener in dpadListeners)
+        {
+            dpadListener.OnTouchChange(direction);
         }
     }
 }

@@ -6,6 +6,7 @@ public class Trash : MonoBehaviour
     [SerializeField] float Range;
     [SerializeField] Mission mission;
     [SerializeField] GameEvents gameEvents;
+    [SerializeField] GameObject TouchIcon;
     bool broken = false;
     bool near = false;
     // Start is called before the first frame update
@@ -19,10 +20,28 @@ public class Trash : MonoBehaviour
     {
         if (near && Input.GetKeyUp(KeyCode.Z) && !broken)
         {
-            transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
-            broken = true;
-            mission.AddScore();
-            gameEvents.CallPolice(transform.position);
+            Brake();
+        }
+
+        if (!broken && near)
+        {
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+                if (touch.phase == TouchPhase.Began)
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit2D raycastHit2D = Physics2D.Raycast(ray.origin, ray.direction);
+                    if (raycastHit2D)
+                    {
+                        if (raycastHit2D.collider.gameObject == gameObject)
+                        {
+                            Brake();
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -41,6 +60,7 @@ public class Trash : MonoBehaviour
         if (collider2D.CompareTag("Player"))
         {
             gameEvents.SetHint("Precione Z para interagir");
+            TouchIcon.SetActive(true);
             near = true;
         }
     }
@@ -50,7 +70,16 @@ public class Trash : MonoBehaviour
         if (collider2D.CompareTag("Player"))
         {
             gameEvents.SetHint("");
+            TouchIcon.SetActive(false);
             near = false;
         }
+    }
+
+    void Brake()
+    {
+        transform.rotation = Quaternion.AngleAxis(45f, Vector3.forward);
+        broken = true;
+        mission.AddScore();
+        gameEvents.CallPolice(transform.position);
     }
 }
