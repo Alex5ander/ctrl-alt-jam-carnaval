@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour, IDpadListener
     Rigidbody2D rigidBody2D;
     bool hidde = false;
     public ThrowableItem item;
-    KeyCode[] keyCodes = {
+    readonly KeyCode[] keyCodes = {
         KeyCode.W,
         KeyCode.A,
         KeyCode.S,
@@ -58,12 +58,7 @@ public class PlayerController : MonoBehaviour, IDpadListener
 
         if (Input.GetKeyUp(KeyCode.X) && !hidde)
         {
-            if (item != null)
-            {
-                item.Use(transform.position, new(animator.GetFloat("LastMoveX"), animator.GetFloat("LastMoveY")));
-                item = null;
-                gameEvents.SetItemSprite(null);
-            }
+            UseItem();
         }
         player.position = transform.position;
         player.hidde = hidde;
@@ -87,7 +82,15 @@ public class PlayerController : MonoBehaviour, IDpadListener
             }
         }
     }
-
+    public void UseItem()
+    {
+        if (item != null)
+        {
+            item.Use(transform.position, new(animator.GetFloat("LastMoveX"), animator.GetFloat("LastMoveY")));
+            item = null;
+            gameEvents.SetItemSprite(null);
+        }
+    }
     public void SetHidde(bool hidde)
     {
         this.hidde = hidde;

@@ -1969,8 +1969,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Use as SETAS para se mover e a tecla ESPA\xC7O para interagir com os objetos.
-    \r\n"
+  m_text: "Use as setas ou WASD para se mover\r\nUse a tecla X usar os objetos coletados\r\nUse
+    a tecla Z para interagir com objetos\r\nUse P para pausar o jogo e ver as miss\xF5es."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

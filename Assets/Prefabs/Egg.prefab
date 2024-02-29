@@ -751,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.17824769
       mode: 0
       spread: 0
       speed:
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5051,5 +5051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f52ddcc3e490f47a1651b7d0877585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  used: 0
   Speed: 10
   particles: {fileID: 5155384133112657383}

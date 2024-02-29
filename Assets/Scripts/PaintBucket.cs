@@ -4,6 +4,8 @@ public class PaintBucket : ThrowableItem
 {
     Vector3 direction;
     [SerializeField] float Speed;
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite InkSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +28,10 @@ public class PaintBucket : ThrowableItem
 
     public override void Use(Vector2 position, Vector2 direction)
     {
-        transform.position = position;
-        gameObject.SetActive(true);
         used = true;
+        spriteRenderer.sprite = InkSprite;
+        transform.position = position;
         this.direction = direction;
+        gameObject.SetActive(true);
     }
 }

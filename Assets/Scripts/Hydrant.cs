@@ -25,20 +25,15 @@ public class Hydrant : MonoBehaviour
         }
         if (!broken && near)
         {
-            for (int i = 0; i < Input.touchCount; i++)
+            if (Input.GetMouseButtonDown(0))
             {
-                Touch touch = Input.GetTouch(i);
-                if (touch.phase == TouchPhase.Began)
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit2D raycastHit2D = Physics2D.Raycast(ray.origin, ray.direction);
+                if (raycastHit2D)
                 {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit2D raycastHit2D = Physics2D.Raycast(ray.origin, ray.direction);
-                    if (raycastHit2D)
+                    if (raycastHit2D.collider.gameObject == gameObject)
                     {
-                        if (raycastHit2D.collider.gameObject == gameObject)
-                        {
-                            Brake();
-                            break;
-                        }
+                        Brake();
                     }
                 }
             }
@@ -57,7 +52,7 @@ public class Hydrant : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if (collider2D.CompareTag("Player"))
+        if (collider2D.CompareTag("Player") && !broken)
         {
             gameEvents.SetHint("Precione Z para interagir");
             TouchIcon.SetActive(true);

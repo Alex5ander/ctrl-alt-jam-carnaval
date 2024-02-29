@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,8 +17,6 @@ public class DPad : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(MainSceneUI.isMobile);
-        RectTransform rectTransform = GetComponent<RectTransform>();
-        rectTransform.position = new Vector2(Screen.safeArea.min.x + rectTransform.sizeDelta.x / 2, Screen.safeArea.min.y + rectTransform.sizeDelta.y / 2);
     }
 
     // Update is called once per frame

@@ -5,12 +5,11 @@ public class ItemUI : MonoBehaviour, IItemListener
 {
     [SerializeField] Image ItemImageUI;
     [SerializeField] GameEvents gameEvents;
+    [SerializeField] GameObject TouchIcon;
     // Start is called before the first frame update
     void Start()
     {
         gameEvents.itemListeners.Add(this);
-        RectTransform rectTransform = ItemImageUI.rectTransform;
-        rectTransform.position = new Vector2(rectTransform.sizeDelta.x + Screen.safeArea.min.x, Screen.safeArea.max.y - rectTransform.sizeDelta.y);
     }
 
     // Update is called once per frame
@@ -22,6 +21,7 @@ public class ItemUI : MonoBehaviour, IItemListener
     {
         ItemImageUI.sprite = sprite;
         ItemImageUI.enabled = sprite != null;
+        TouchIcon.SetActive(sprite != null);
     }
 
     void OnDestroy()

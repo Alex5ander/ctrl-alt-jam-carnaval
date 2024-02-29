@@ -10,8 +10,6 @@ public class MissionStatus : MonoBehaviour, IMissionEventListener
     // Start is called before the first frame update
     void Start()
     {
-        RectTransform rectTransform = MissionStatusUI.rectTransform;
-        rectTransform.position = new Vector2(Screen.safeArea.max.x - 16, Screen.safeArea.max.y - rectTransform.sizeDelta.y);
         foreach (Mission mission in Missions)
         {
             mission.listeners.Add(this);

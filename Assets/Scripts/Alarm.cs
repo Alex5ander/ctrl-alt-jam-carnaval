@@ -4,6 +4,7 @@ public class Alarm : MonoBehaviour
 {
     [SerializeField] CircleCollider2D circleCollider2D;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameEvents gameEvents;
     [SerializeField] float Range;
     [SerializeField] Mission mission;
     bool near = false;
@@ -19,6 +20,7 @@ public class Alarm : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Z) && near && !audioSource.enabled)
         {
             audioSource.enabled = true;
+            gameEvents.CallPolice(transform.position);
             mission.AddScore();
         }
     }

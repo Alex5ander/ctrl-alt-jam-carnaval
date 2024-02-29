@@ -99,7 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a5c0556b46dfc7438e932f23d713873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  used: 0
   Speed: 15
+  spriteRenderer: {fileID: 287607098229520086}
+  InkSprite: {fileID: -2817813186423584760, guid: 019c8afd91b306e46b40efce8632f43d, type: 3}
 --- !u!61 &7119594265459672202
 BoxCollider2D:
   m_ObjectHideFlags: 0
